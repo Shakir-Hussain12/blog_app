@@ -2,42 +2,44 @@
 
 # 📗 Table of Contents
 
-- [📖 About the Project](#about-project)
-  - [🛠 Built With](#built-with)
-    - [Tech Stack](#tech-stack)
-    - [Key Features](#key-features)
-- [💻 Getting Started](#getting-started)
-  - [Setup](#setup)
-  - [Prerequisites](#prerequisites)
-  - [Install](#install)
-  - [Usage](#usage)
-- [👥 Authors](#authors)
-- [🔭 Future Features](#future-features)
-- [🤝 Contributing](#contributing)
-- [⭐️ Show your support](#support)
-- [🙏 Acknowledgements](#acknowledgements)
-- [📝 License](#license)
+- [📗 Table of Contents](#-table-of-contents)
+- [📖 \[blog\_app\] ](#-blog_app-)
+  - [🛠 Built With ](#-built-with-)
+    - [Tech Stack ](#tech-stack-)
+    - [Key Features ](#key-features-)
+  - [💻 Getting Started ](#-getting-started-)
+    - [Prerequisites](#prerequisites)
+    - [Setup](#setup)
+    - [Install](#install)
+    - [Usage](#usage)
+    - [Run tests](#run-tests)
+  - [👥 Authors ](#-authors-)
+  - [🔭 Future Features ](#-future-features-)
+  - [🤝 Contributing ](#-contributing-)
+  - [⭐️ Show your support ](#️-show-your-support-)
+  - [🙏 Acknowledgments ](#-acknowledgments-)
+  - [📝 License ](#-license-)
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [OOP-School-Library] <a name="about-project"></a>
+# 📖 [blog_app] <a name="about-project"></a>
 
-**[OOP-School-Library]** is an implementation of school library system, using Ruby Object Oriented Programming principles
-- [Video description of the project](https://drive.google.com/file/d/1nrNc1g0aDzEuQQfDfNuKJH3YgdUrfO5k/view?usp=sharing)
+**[blog_app]** is an implementation of an online blog posting system, using Ruby Object Oriented Programming and Active Record principles to interact with the postgreSQL database.
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
   <ul>
     <li><a href="https://www.ruby-lang.org/en/">Ruby</a></li>
+    <li><a href="https://rubyonrails.org">Rails</a></li>
+    <li><a href="https://www.postgresql.org">postgreSQL</a></li>
   </ul>
 
 <!-- Features -->
 
 ### Key Features <a name="key-features"></a>
 
-- **[Catalog of my things record keeping]**
-- **[Minimalistic UI to access the systems]**
+- **[migration of database tables]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -53,7 +55,10 @@ In order to run this project you need the following installed in your local syst
 
 <ul>
 <li>Ruby</li>
-<li>Git CLI</li>
+<li>Rails</li>
+<li>PostgreSQL</li>
+<li>Git</li>
+<li>VS Code</li>
 <li>Github account</li>
 </ul>
 
@@ -63,7 +68,7 @@ Clone this repository to your desired folder:
 
 ```sh
   cd my-folder
-  git clone https://github.com/Johnadibe/catalog_of_my_things.git
+  git clone https://github.com/Shakir-Hussain12/blog_app.git
 ```
 
 ### Install
@@ -71,7 +76,7 @@ Clone this repository to your desired folder:
 Install this project with:
 
 ```sh
-  cd catalog_of_my_things
+  cd blog_app
   bundle install
 ```
 
@@ -80,7 +85,7 @@ Install this project with:
 To run the project, execute the following command:
 
 ```sh
-  ruby main.rb
+  rails s
 ```
 ### Run tests
 
@@ -92,19 +97,6 @@ To run the project, execute the following command:
 <!-- AUTHORS -->
 
 ## 👥 Authors <a name="authors"></a>
-
-
-👤 **John Adibe**
-
-- GitHub: [@Johnadibe](https://github.com/Johnadibe)
-- Twitter: [@JohnAdibe2](https://twitter.com/JohnAdibe2)
-- LinkedIn: [@John Adibe](https://www.linkedin.com/in/john-adibe/)
-
-👤**Chukwuemeka Ochuba**
-
-- GitHub: [@Donmark2k](https://github.com/Donmark2k)
-- Twitter: [@Donmark2k](https://twitter.com/donmark2k)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/chukwuemeka-ochuba/)
 
 👤**Shakir Hussain**
 
@@ -120,8 +112,9 @@ To run the project, execute the following command:
 ## 🔭 Future Features <a name="future-features"></a>
 
 
-- [ ] **[View the author by id]**
-- [ ] **[Display music br genre]**
+- [ ] **[association between models]**
+- [ ] **[CRUD Methods]**
+- [ ] **[test for the app]**
 
 
 
@@ -150,7 +143,8 @@ catalog_of_my_things/)
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to appreciate [Microverse](https://www.microverse.org/) for providing the resources and the platform for us to be a Professional full-stack developer.
+I would like to appreciate [Microverse](https://www.microverse.org/) for providing the resources and the platform for us to complete this project.
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LICENSE -->
