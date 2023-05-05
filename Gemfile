@@ -15,7 +15,7 @@ gem 'sprockets-rails'
 gem 'pg', '~> 1.1'
 
 # Use dotenv to load environment variables from .env into ENV in development
-gem 'dotenv-rails', groups: %i[development production test]
+gem 'dotenv-rails', groups: %i[development test]
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 5.0'
