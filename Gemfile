@@ -16,6 +16,11 @@ gem 'pg', '~> 1.1'
 # Use dotenv to load environment variables from .env into ENV in development
 gem 'dotenv-rails', groups: %i[development test]
 
+# testing
+group :development, :test do
+  gem 'rspec-rails'
+end
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 5.0'
 
