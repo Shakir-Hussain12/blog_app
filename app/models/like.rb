@@ -7,8 +7,6 @@ class Like < ApplicationRecord
   private
 
   def update_count
-    return unless post.likes.count(:all) == 1
-
-    post.increment!(:likes_count)
+    post.likes_count = post.likes.count
   end
 end
