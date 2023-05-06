@@ -40,6 +40,9 @@
 ### Key Features <a name="key-features"></a>
 
 - **[migration of database tables]**
+- **[association between models]**
+- **[CRUD Methods]**
+- **[test for the app]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -102,7 +105,7 @@ To run the project, execute the following command:
 
 - GitHub: [@Shakir-Hussain12](https://github.com/Shakir-Hussain12)
 - Twitter: [@S_Hussain_99](https://twitter.com/S_Hussain_99)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/shakir-hussain-2129a121b/)
+- LinkedIn: [@S_Hussain_99](https://www.linkedin.com/in/shakir-hussain-2129a121b/)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -111,10 +114,7 @@ To run the project, execute the following command:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-
-- [ ] **[association between models]**
-- [ ] **[CRUD Methods]**
-- [ ] **[test for the app]**
+- [ ] **[Basic UI]**
 
 
 
