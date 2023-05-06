@@ -3,6 +3,10 @@ class Post < ApplicationRecord
   has_many :likes, foreign_key: 'post_id'
   has_many :comments, foreign_key: 'post_id'
 
+  validates :title, presence: true, length: { maximum: 250 }
+  validates :likes_count, numericality: { greater_than_or_equal_to: 0, only_integer: true }
+  validates :comments_count, numericality: { greater_than_or_equal_to: 0, only_integer: true }
+
   recent_comments = ->(no) { comments.order(created_at: :desc).limit(no) }
 
   define_method :recent_comments, recent_comments
@@ -12,8 +16,6 @@ class Post < ApplicationRecord
   private
 
   def update_count
-    return unless author.posts.count(:all) == 1
-
-    author.increment!(:posts_count)
+    author.posts_count = author.posts.count
   end
 end
