@@ -8,8 +8,8 @@ RSpec.describe 'Posts', type: :system do
     end
 
     it 'should render correct template' do
-        visit user_post_path(1,2)
-        expect(page).to have_current_path('/users/1/posts/2')
+      visit user_post_path(1, 2)
+      expect(page).to have_current_path('/users/1/posts/2')
     end
 
     it 'should return correct data' do
