@@ -8,8 +8,8 @@ RSpec.describe 'Users', type: :system do
     end
 
     it 'should render correct template' do
-      get '/users/1'
-      expect(response.body).to include('show page for users')
+      visit user_path(1)
+      expect(page).to have_current_path('/users/1')
     end
 
     it 'should return correct data' do

@@ -1,5 +1,4 @@
 require 'rails_helper'
-require 'rails-controller-testing'
 
 RSpec.describe 'Users', type: :system do
   describe 'Get /index' do
@@ -9,8 +8,8 @@ RSpec.describe 'Users', type: :system do
     end
 
     it 'should render correct template' do
-      get '/users'
-      expect(response.body).to include('index page for users')
+      visit users_path
+      expect(page).to have_current_path('/users')
     end
 
     it 'should return correct data' do

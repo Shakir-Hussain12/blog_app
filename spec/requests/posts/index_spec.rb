@@ -8,8 +8,8 @@ RSpec.describe 'Posts', type: :system do
     end
 
     it 'should render correct template' do
-      get '/users/11/posts'
-      expect(response.body).to include('index page for posts')
+      visit user_posts_path(11)
+      expect(page).to have_current_path('/users/11/posts')
     end
 
     it 'should return correct data' do
