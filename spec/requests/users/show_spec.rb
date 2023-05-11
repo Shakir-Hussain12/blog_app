@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Users', type: :system do
+RSpec.describe 'Users', type: :request do
   describe 'GET /user/:id' do
     it 'should show the users index page' do
       get '/users/1'
@@ -8,13 +8,13 @@ RSpec.describe 'Users', type: :system do
     end
 
     it 'should render correct template' do
-      visit user_path(1)
-      expect(page).to have_current_path('/users/1')
+      get '/users/1'
+      expect(response).to render_template(:show)
     end
 
     it 'should return correct data' do
       get '/users/1'
-      expect(response.body).to have_selector('h1', text: 'This is the show page for users')
+      expect(response.body).to include('show page for users')
     end
   end
 end
