@@ -1,3 +1,4 @@
-<h1>
-    This is the index page for users
-</h1>
+<h1 class="header">List of all users</h1>
+<ul class="user-container">
+    <%= render partial: 'list', collection: @users, as: :user %>
+</ul>

@@ -1,3 +1,9 @@
-<h1>
-    This is the show page for users
-</h1>
+<h1>Details of <%= myuser.name %></h1>
+<%= render partial: 'list', collection: myuser, as: :user %>
+<div class="Bio">
+    <p>Lorem Ipsem</p>
+</div>
+
+<ul class="posts-container">
+    <%= render partial: 'show', collection: posts, as: :post %>
+</ul>

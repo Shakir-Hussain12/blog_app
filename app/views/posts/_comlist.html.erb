@@ -1,0 +1,15 @@
+<% @posts.each do |post| %>
+    <%= render partial:'users/show', object:post, as: :post %>
+    <% comments = Comment.where(post_id: post.id) %>
+    <% if post.comments_count.nil? then %>
+        <li>No Comments Yet!</li>
+    <% else %>
+        <h3>Post Comments</h3>
+        <% comments.each do |comment| %>
+            <% user = User.find(comment.author_id) %>
+            <li class="comment-item">
+                <p><%= user.name %>: <%= comment.text %></p>
+            </li>
+        <% end %>
+    <% end %>
+<% end %>
