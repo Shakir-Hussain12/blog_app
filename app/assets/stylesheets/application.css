@@ -1,5 +1,7 @@
 body * {
   list-style: none;
+  text-decoration: none;
+  color: black;
 }
 
 body > h1 {
@@ -80,6 +82,7 @@ body > h1 {
   background: darkgray;
   color: white;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .pagination {
