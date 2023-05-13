@@ -1,0 +1,15 @@
+<%= form_with(model: post, url: url, local: true, method: :post) do |form| %>
+  <div>
+    <%= form.label :title %><br>
+    <%= form.text_field :title, required: true %>
+  </div>
+
+  <div>
+    <%= form.label :text %><br>
+    <%= form.text_area :text, rows: 6, cols: 35, required: true %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
