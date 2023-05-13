@@ -1,0 +1,12 @@
+<h2>Adding a comment</h2>
+
+<%= form_with(model: @comment, url: user_post_comments_path, local: true, method: :post) do |form| %>
+  <div>
+    <%= form.label :text %><br>
+    <%= form.text_area :text, rows: 6, cols: 35, required: true %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

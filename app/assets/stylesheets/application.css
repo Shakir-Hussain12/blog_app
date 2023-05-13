@@ -86,6 +86,24 @@ body > h1 {
 }
 
 .pagination {
-  max-width: 204px;
+  max-width: 225px;
   margin: auto;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 5%;
+}
+
+.buttons button {
+  border-radius: 5px;
+  padding: 5%;
+  width: 150px;
+}
+
+.buttons button:hover {
+  cursor: pointer;
+  background: black;
+  color: white;
 }
