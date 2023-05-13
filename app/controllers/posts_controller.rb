@@ -19,7 +19,7 @@ class PostsController < ApplicationController
     if @post.save
       puts "success!"
       flash[:success] = 'Post created successfully'
-      redirect_to user_post_path(@post.author_id, @post.id)
+      redirect_to user_path(@post.author_id)
     else
       puts "failure!"
       flash[:alert] = "Post couldn't be created"

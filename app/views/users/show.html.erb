@@ -9,5 +9,8 @@
 <ul class="posts-container">
     <% posts = myuser.recent_posts(3) %>
     <%= render partial: 'show', collection: posts, as: :post, user: myuser %>
-    <%= button_to 'See All posts', user_posts_path(myuser.id), method: :get, class: 'posts-btn' %>
+    <div class="buttons">
+        <%= button_to 'Add a post', new_user_post_path(myuser.id), method: :get %>
+        <%= button_to 'See All posts', user_posts_path(myuser.id), method: :get %>
+    </div>
 </ul>
