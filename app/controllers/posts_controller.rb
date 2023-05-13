@@ -17,11 +17,11 @@ class PostsController < ApplicationController
     text = params[:text]
     @post = Post.new(title:, text:, likes_count: 0, comments_count: 0, author: current_user)
     if @post.save
-      puts "success!"
+      puts 'success!'
       flash[:success] = 'Post created successfully'
       redirect_to user_path(@post.author_id)
     else
-      puts "failure!"
+      puts 'failure!'
       flash[:alert] = "Post couldn't be created"
       render 'new'
     end
