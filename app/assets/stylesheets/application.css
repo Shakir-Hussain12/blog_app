@@ -81,3 +81,8 @@ body > h1 {
   color: white;
   border-radius: 10px;
 }
+
+.pagination {
+  max-width: 204px;
+  margin: auto;
+}
