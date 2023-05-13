@@ -1,7 +1,12 @@
 <% @posts.each do |post| %>
     <%= render partial:'users/show', object:post, as: :post %>
     <div class="comment-container">
-        <h3>Post Comments</h3>
-        <%= show_comments(post) %>
+        <h3>Recent Comments</h3>
+        <% comments = post.recent_comments(5) %>
+        <% if comments.length.positive? then %>
+            <%= render partial: 'posts/listcoms', collection: comments, as: :comment %>
+        <% else %>
+            <p>No Comments yet!</p>
+        <% end %>
     </div>
 <% end %>

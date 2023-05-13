@@ -36,12 +36,12 @@ body > h1 {
   padding: 0 2%;
   border: 3px solid;
   border-radius: 5px;
-  margin: auto;
-  max-width: 82%;
+  margin-left: 2em;
+  max-width: 85%;
 }
 
 .posts-container {
-  margin-top: 8%;
+  margin-top: 2%;
 }
 
 .inner-items {
@@ -50,7 +50,7 @@ body > h1 {
 }
 
 .inner-items > p {
-  margin-top: -3%;
+  margin-top: -1.5%;
 }
 
 .post-item {
@@ -72,4 +72,12 @@ body > h1 {
   border-radius: 5px;
   padding: 2%;
   margin-bottom: 5%;
+}
+
+.posts-btn {
+  margin: 0 42%;
+  height: 5vh;
+  background: darkgray;
+  color: white;
+  border-radius: 10px;
 }

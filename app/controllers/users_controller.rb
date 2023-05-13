@@ -4,8 +4,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.where(id: params[:id])
-    @posts = Post.where(author_id: @user[0].id)
+    @user = User.find(params[:id])
     render 'show', locals: { myuser: @user, posts: @posts }
   end
 end
