@@ -1,15 +1,91 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+body * {
+  list-style: none;
+  text-decoration: none;
+  color: black;
+}
+
+body > h1 {
+  text-align: center;
+}
+
+.user-container {
+  margin-top: 10%;
+}
+
+.user-item {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 5% 0;
+}
+
+.main-details {
+  border: 3px solid;
+  display: flex;
+  min-width: 60%;
+  padding: 2%;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.item-no {
+  align-self: flex-end;
+  margin-bottom: 0;
+}
+
+.bio {
+  padding: 0 2%;
+  border: 3px solid;
+  border-radius: 5px;
+  margin-left: 2em;
+  max-width: 85%;
+}
+
+.posts-container {
+  margin-top: 2%;
+}
+
+.inner-items {
+  display: flex;
+  justify-content: space-between;
+}
+
+.inner-items > p {
+  margin-top: -1.5%;
+}
+
+.post-item {
+  border: 3px solid;
+  border-radius: 5px;
+  max-width: 89%;
+  margin-bottom: 5%;
+  padding: 2%;
+}
+
+.post-item > h3 {
+  margin-top: 0;
+}
+
+.comment-container {
+  margin-top: -5%;
+  border: 3px solid;
+  max-width: 89%;
+  border-radius: 5px;
+  padding: 2%;
+  margin-bottom: 5%;
+}
+
+.posts-btn {
+  margin: 0 42%;
+  height: 5vh;
+  background: darkgray;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.pagination {
+  max-width: 204px;
+  margin: auto;
+}

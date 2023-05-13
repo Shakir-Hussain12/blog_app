@@ -1,3 +1,8 @@
-<h1>
-    This is the show page for posts
-</h1>
+<div class="top-com">
+    <h1>Post#<%= @post.id %> by <%= @user.name %></h1>
+    <%= render partial: 'users/show', object: @post, as: :post %>
+</div>
+<div class="comment-container">
+    <h3>Post Comments</h3>
+    <%= show_comments(@post) %>
+</div>
