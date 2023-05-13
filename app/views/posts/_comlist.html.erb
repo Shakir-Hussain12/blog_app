@@ -1,4 +1,7 @@
 <% @posts.each do |post| %>
     <%= render partial:'users/show', object:post, as: :post %>
-    <% show_comments(post) %>
+    <div class="comment-container">
+        <h3>Post Comments</h3>
+        <%= show_comments(post) %>
+    </div>
 <% end %>

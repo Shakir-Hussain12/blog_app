@@ -1,4 +1,7 @@
 <li class="post-item">
-    <h3><%= post.text %></h3>
-    <p>Comments: <%= post.comments_count == nil ? 0 : post.comments_count %> Likes: <%= post.likes_count == nil ? 0 : post.likes_count %></p>
+    <h3>Post#<%= post.id %></h3>
+    <div class="inner-items">
+        <p><%= post.text %></p>
+        <p class="item-no">Comments: <%= post.comments_count == nil ? 0 : post.comments_count %>, Likes: <%= post.likes_count == nil ? 0 : post.likes_count %></p>
+    </div>
 </li>
