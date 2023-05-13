@@ -1,4 +1,4 @@
-<%= form_with(model: post, url: url, local: true, method: :post) do |form| %>
+<%= form_with(model: @post, url: url, local: true, method: :post) do |form| %>
   <div>
     <%= form.label :title %><br>
     <%= form.text_field :title, required: true %>

@@ -89,3 +89,15 @@ body > h1 {
   max-width: 204px;
   margin: auto;
 }
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 5%;
+}
+
+.buttons button {
+  border-radius: 5px;
+  padding: 5%;
+  width: 150px;
+}
