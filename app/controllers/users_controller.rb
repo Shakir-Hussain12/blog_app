@@ -6,7 +6,6 @@ class UsersController < ApplicationController
   def show
     @user = User.where(id: params[:id])
     @posts = Post.where(author_id: @user[0].id)
-    render 'show', locals: {myuser: @user, posts: @posts}
+    render 'show', locals: { myuser: @user, posts: @posts }
   end
-
 end
