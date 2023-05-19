@@ -2,8 +2,8 @@ class PostsController < ApplicationController
   def new; end
 
   def index
-    @user = User.find(params[:user_id])
-    @posts = Post.where(author_id: @user.id).paginate(page: params[:page], per_page: 2)
+    @user = User.includes(posts: :comments).find(params[:user_id])
+    @posts = @user.posts.paginate(page: params[:page], per_page: 2)
     render 'index', locals: { user: @user, posts: @posts }
   end
 
