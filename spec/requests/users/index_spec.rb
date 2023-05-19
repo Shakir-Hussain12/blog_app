@@ -7,7 +7,7 @@ RSpec.describe 'Users', type: :system do
       expect(response).to be_successful
     end
 
-    it 'should visit correct path' do
+    it 'should render correct path' do
       visit users_path
       expect(current_path).to eq('/users')
     end
@@ -40,7 +40,6 @@ RSpec.describe 'Users', type: :system do
     end
 
     it 'should check for specific user names' do
-
       names = ['Tom', 'Shakir']
       visit users_path
       names.each do |name|
