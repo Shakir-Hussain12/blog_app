@@ -9,6 +9,16 @@ RSpec.describe 'Posts', type: :system do
       expect(response).to be_successful
     end
 
+    it 'should get the post title' do
+      user_id = rand(1..2)
+      post_id = rand(1..5)
+      visit user_post_path(user_id, post_id)
+      container = page.find('li', class: 'post-item')
+      title = container.find('h3').text
+      expect(title).not_to be_empty
+      expect(title).to eq(Post.find(post_id).title)
+    end
+
     it 'should get the post writer name' do
       user_id = rand(1..2)
       post_id = rand(1..5)
