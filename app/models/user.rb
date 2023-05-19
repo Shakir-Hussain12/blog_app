@@ -8,5 +8,4 @@ class User < ApplicationRecord
 
   recent_posts = ->(no) { posts.order(created_at: :desc).limit(no) }
   define_method :recent_posts, recent_posts
-  
 end

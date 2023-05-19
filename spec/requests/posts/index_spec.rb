@@ -44,7 +44,7 @@ RSpec.describe 'Posts', type: :system do
       titles = page.all('li', class: 'post-item')
       posts = Post.where(author_id: user_id)
       title_arr = []
-      posts.map{ |post| title_arr << post.title}
+      posts.map { |post| title_arr << post.title }
       titles.each do |title|
         expect(title.find('h3').text).not_to be_empty
         expect(title.find('h3').text).to be_in(title_arr)
@@ -55,9 +55,9 @@ RSpec.describe 'Posts', type: :system do
       user_id = 1
       visit user_posts_path(user_id)
       bodies = page.all('div', class: 'inner-items')
-      posts = Post.where(author_id: user_id)
+      Post.where(author_id: user_id)
       body_arr = []
-      bodies.map{ |body| body_arr << body.first('p').text}
+      bodies.map { |body| body_arr << body.first('p').text }
       bodies.each do |body|
         expect(body.first('p').text).not_to be_empty
         expect(body.first('p').text).to be_in(body_arr)
@@ -81,7 +81,7 @@ RSpec.describe 'Posts', type: :system do
       containers.each do |container|
         comment_count = container.find('p', class: 'item-no')
         f_portion = comment_count.text.split(',').first
-        expect(f_portion.split(' ').second.to_i).to eq(0).or be >= 0
+        expect(f_portion.split.second.to_i).to eq(0).or be >= 0
       end
     end
 
@@ -92,7 +92,7 @@ RSpec.describe 'Posts', type: :system do
       containers.each do |container|
         comment_count = container.find('p', class: 'item-no')
         f_portion = comment_count.text.split(',').second
-        expect(f_portion.split(' ').second.to_i).to eq(0).or be >= 0
+        expect(f_portion.split.second.to_i).to eq(0).or be >= 0
       end
     end
 
@@ -110,10 +110,9 @@ RSpec.describe 'Posts', type: :system do
       my_links = page.all('a', class: 'com_nav')
       my_links.each do |link|
         link.click
-        expect(page).to have_current_path(user_post_path(1,link[:href].split('/').last.to_i))
+        expect(page).to have_current_path(user_post_path(1, link[:href].split('/').last.to_i))
         visit user_posts_path(1)
       end
     end
-
   end
 end

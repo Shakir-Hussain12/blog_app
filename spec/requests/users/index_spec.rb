@@ -40,7 +40,7 @@ RSpec.describe 'Users', type: :system do
     end
 
     it 'should check for specific user names' do
-      names = ['Tom', 'Shakir']
+      names = %w[Tom Shakir]
       visit users_path
       names.each do |name|
         expect(page).to have_css('h2', text: name)
@@ -60,7 +60,7 @@ RSpec.describe 'Users', type: :system do
       visit users_path
       page.all('img').each do |image|
         expect(image[:src]).not_to be_empty
-        expect(image[:src]).to match(/https?:\/\/[\S]+/)
+        expect(image[:src]).to match(%r{https?://\S+})
       end
     end
 
@@ -71,6 +71,5 @@ RSpec.describe 'Users', type: :system do
         expect(post_tag.text).to match(/-?\d+(\.\d+)?/)
       end
     end
-
   end
 end

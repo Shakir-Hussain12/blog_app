@@ -89,8 +89,8 @@ RSpec.describe 'Users', type: :system do
       user_id = rand(1..2)
       visit user_path(user_id)
       container = page.find('ul', class: 'posts-container')
-      post = container.all('a')[0] if container.all('a').length > 0
-      if post then
+      post = container.all('a')[0] unless container.all('a').empty?
+      if post
         post_id = post[:href].split('/').last if post
         click_link(href: "/users/#{user_id}/posts/#{post_id}")
         expect(page).to have_current_path(user_post_path(user_id, post_id))
@@ -98,7 +98,7 @@ RSpec.describe 'Users', type: :system do
 
       visit user_path(user_id)
       post = container.all('a')[1] if container.all('a').length > 1
-      if (post) then
+      if post
         post_id = post[:href].split('/').last
         click_link(href: "/users/#{user_id}/posts/#{post_id}")
         expect(page).to have_current_path(user_post_path(user_id, post_id))
@@ -106,12 +106,11 @@ RSpec.describe 'Users', type: :system do
 
       visit user_path(user_id)
       post = container.all('a')[2] if container.all('a').length > 2
-      if post then
+      if post
         post_id = post[:href].split('/').last if post
         click_link(href: "/users/#{user_id}/posts/#{post_id}")
         expect(page).to have_current_path(user_post_path(user_id, post_id))
       end
     end
-
   end
 end

@@ -14,7 +14,7 @@ RSpec.describe 'Posts', type: :system do
       post_id = rand(1..5)
       visit user_post_path(user_id, post_id)
       container = page.find('div', class: 'top-com')
-      title =  container.find('h1').text.split(' ').last
+      title = container.find('h1').text.split.last
       expect(title).to eq(User.find(user_id).name)
     end
 
@@ -26,7 +26,7 @@ RSpec.describe 'Posts', type: :system do
       containers.each do |container|
         comment_count = container.find('p', class: 'item-no')
         f_portion = comment_count.text.split(',').first
-        expect(f_portion.split(' ').second.to_i).to eq(0).or be >= 0
+        expect(f_portion.split.second.to_i).to eq(0).or be >= 0
       end
     end
 
@@ -38,7 +38,7 @@ RSpec.describe 'Posts', type: :system do
       containers.each do |container|
         comment_count = container.find('p', class: 'item-no')
         f_portion = comment_count.text.split(',').second
-        expect(f_portion.split(' ').second.to_i).to eq(0).or be >= 0
+        expect(f_portion.split.second.to_i).to eq(0).or be >= 0
       end
     end
 
@@ -57,14 +57,14 @@ RSpec.describe 'Posts', type: :system do
       post_id = rand(1..5)
       visit user_post_path(user_id, post_id)
       container = page.find('div', class: 'comment-container')
-      if container.all('li', class: 'comment-item').count > 0 then
+      if container.all('li', class: 'comment-item').count > 0
         container.all('li', class: 'comment-item').each do |comment|
-          temp = (comment.text.split(':').second).gsub(/\s+/, ' ').strip
+          temp = comment.text.split(':').second.gsub(/\s+/, ' ').strip
           user_id = Comment.where(text: temp).first.author_id
           expect(comment.text.split(':').first).to eq(User.find(user_id).name)
         end
       else
-        puts container.find('p').text eq('No Comments Yet!')
+        container.find('p').text eq('No Comments Yet!')
       end
     end
 
@@ -73,15 +73,14 @@ RSpec.describe 'Posts', type: :system do
       post_id = 1
       visit user_post_path(user_id, post_id)
       container = page.find('div', class: 'comment-container')
-      if container.all('li', class: 'comment-item').count > 0 then
+      if container.all('li', class: 'comment-item').count > 0
         container.all('li', class: 'comment-item').each do |comment|
-          temp = (comment.text.split(':').second).gsub(/\s+/, ' ').strip
+          temp = comment.text.split(':').second.gsub(/\s+/, ' ').strip
           expect(temp).to eq(Comment.where(text: temp).first.text)
         end
       else
-        puts container.find('p').text eq('No Comments Yet!')
+        container.find('p').text eq('No Comments Yet!')
       end
     end
-
   end
 end
