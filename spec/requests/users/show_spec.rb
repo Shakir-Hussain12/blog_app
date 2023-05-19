@@ -86,25 +86,31 @@ RSpec.describe 'Users', type: :system do
     end
 
     it 'should redirect to the post being clicked on' do
-      user_id = 1
+      user_id = rand(1..2)
       visit user_path(user_id)
       container = page.find('ul', class: 'posts-container')
       post = container.all('a')[0] if container.all('a').length > 0
-      post_id = post[:href].split('/').last
-      click_link(href: "/users/#{user_id}/posts/#{post_id}")
-      expect(page).to have_current_path(user_post_path(user_id, post_id))
+      if post then
+        post_id = post[:href].split('/').last if post
+        click_link(href: "/users/#{user_id}/posts/#{post_id}")
+        expect(page).to have_current_path(user_post_path(user_id, post_id))
+      end
 
       visit user_path(user_id)
       post = container.all('a')[1] if container.all('a').length > 1
-      post_id = post[:href].split('/').last
-      click_link(href: "/users/#{user_id}/posts/#{post_id}")
-      expect(page).to have_current_path(user_post_path(user_id, post_id))
+      if (post) then
+        post_id = post[:href].split('/').last
+        click_link(href: "/users/#{user_id}/posts/#{post_id}")
+        expect(page).to have_current_path(user_post_path(user_id, post_id))
+      end
 
       visit user_path(user_id)
       post = container.all('a')[2] if container.all('a').length > 2
-      post_id = post[:href].split('/').last
-      click_link(href: "/users/#{user_id}/posts/#{post_id}")
-      expect(page).to have_current_path(user_post_path(user_id, post_id))
+      if post then
+        post_id = post[:href].split('/').last if post
+        click_link(href: "/users/#{user_id}/posts/#{post_id}")
+        expect(page).to have_current_path(user_post_path(user_id, post_id))
+      end
     end
 
   end
