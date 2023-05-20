@@ -1,4 +1,4 @@
 <li>
     <% user = User.find(comment.author_id) %>
-    <p><%= user.name %> : <%= comment.text %></p>
+    <p><strong><%= user.name %></strong> : <%= comment.text %></p>
 </li>

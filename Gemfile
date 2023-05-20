@@ -88,3 +88,6 @@ end
 
 # pagination
 gem 'will_paginate'
+
+# authorization and authentication
+gem 'devise'
