@@ -1,7 +1,8 @@
 <li class="user-item">
     <img src="<%= user.photo %>" alt="<%= user.name %>">
+    <%= puts user.posts_count %>
     <%= link_to user_path(user.id), class: "main-details" do %>
             <h2><%= user.name %></h2>
-            <p class="item-no">Number of posts : <%= user.posts_count.nil? ? 0 : user.posts_count %></p>
+            <p class="item-no">Number of posts : <%= user.posts_count %></p>
     <% end %>
 </li>
