@@ -10,5 +10,4 @@ class LikesController < ApplicationController
       flash[:alert] = 'Like unsuccessful...'
     end
   end
-
 end

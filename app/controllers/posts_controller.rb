@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-
   before_action :load_user, only: %i[index show create]
   def new; end
 
@@ -29,5 +28,4 @@ class PostsController < ApplicationController
 
   load_user = -> { @user = User.includes(:posts).find(params[:user_id]) }
   define_method :load_user, load_user
-  
 end

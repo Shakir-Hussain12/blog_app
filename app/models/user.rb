@@ -14,7 +14,7 @@ class User < ApplicationRecord
   validates :posts_count, numericality: { greater_than_or_equal_to: 0, only_integer: true }
 
   def set_name
-       self.name ||= email.split('@').first || 'Anonymous'
+    self.name ||= email.split('@').first || 'Anonymous'
   end
 
   recent_posts = ->(no) { posts.order(created_at: :desc).limit(no) }
